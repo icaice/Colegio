@@ -6,10 +6,10 @@ import java.util.Date;
 
 public class Colegio {
 
-    private String nombre;
-    private int numeroDeProfesores;
-    private Date fechaDeFundacion; 
-    private int numeroDeSalones;
+    private String nombre;// nombre del colegio
+    private int numeroDeProfesores;//cantidad de profesores que trabajan en el colegio
+    private Date fechaDeFundacion; //fecha en la que se fundo el colegio
+    private int numeroDeSalones;//numero de salones que hay en el colegio
     private Boolean nacional; //si es conocidad en colombia        
 
     public Colegio(String nombre, 
