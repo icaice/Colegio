@@ -10,35 +10,46 @@ public class Colegio {
     private int numeroDeProfesores;//cantidad de profesores que trabajan en el colegio
     private Date fechaDeFundacion; //fecha en la que se fundo el colegio
     private int numeroDeSalones;//numero de salones que hay en el colegio
-    private Boolean nacional; //si es conocidad en colombia        
+    private Boolean nacional; //si es conocidad en colombia     
+    private int numeroDeProfesoresNuevo;//es la cantidad de profesores nuevos en el colegio 
+    private int numeroDeAlumnosEnCadaSalon;//es la cantidad de alumnos en cada salon
+    private int numeroDeAlumnosQueTransfieran;//es la cantidad de alumnos que pagan la matricula
 
+    //este es el constructor de clases
     public Colegio(String nombre, 
             int numeroDeProfesores, 
             Date fechaDeFundacion, 
             int numeroDeSalones, 
-            Boolean nacional) {
+            Boolean nacional,
+            int numeroDeProfesoresNuevo,
+            int numeroDeAlumnosEnCadaSalon,
+            int numeroDeAlumnosQueTransfieran) {
         this.nombre = nombre;
         this.numeroDeProfesores = numeroDeProfesores;
         this.fechaDeFundacion = fechaDeFundacion;
         this.numeroDeSalones = numeroDeSalones;
         this.nacional = nacional;
+        this.numeroDeProfesoresNuevo = numeroDeProfesoresNuevo;
+        this.numeroDeAlumnosEnCadaSalon = numeroDeAlumnosEnCadaSalon;
+        this.numeroDeAlumnosQueTransfieran = numeroDeAlumnosQueTransfieran;
     }
 
+   
    //aumenta la cantidad de salones en 20 y aumenta el numero de profesores en 15
     public void hacerMasSalones() {
-        this.numeroDeSalones +=20;
-        this.numeroDeProfesores +=10;
+        this.numeroDeSalones +=9;
+        this.numeroDeProfesores +=2;
     }
     
     /**
      * Este metodo permite cambiar el nombre del colegio y sea conocido nacionalmente 
-     * @param nuevoNombre es el nuevo nombre
      */
     public void reconocerNacionalmente(String nuevoNombre) { 
         this.nombre = nuevoNombre;
         this.nacional = true;
     }
     
+    // a partir de esta linea se encuentran los metodos get y set
     public String getNombre() {
         return nombre;
     }
@@ -79,35 +90,57 @@ public class Colegio {
         this.nacional = nacional;
     }
     
+    public int getNumeroDeProfesoresNuevo (){
+        return numeroDeProfesores; 
+    }
     
+    public void setNumeroDeProfesoresNuevo (int numeroDeProfesoresNuevo) {
+              this.numeroDeProfesoresNuevo = numeroDeProfesoresNuevo;
+    }          
+    
+    public int getNumeroDeAlumnosEnCadaSalon () {
+        return numeroDeAlumnosEnCadaSalon;
+    }
+    
+    public void setNumeroDeAlumnosEnCadaSalon (int numeroDeAlumnosEnCadaSalon) {
+              this.numeroDeAlumnosEnCadaSalon = numeroDeAlumnosEnCadaSalon;
+    }       
+    
+    public int getNumeroDeAlumnosQueTransfieran () {
+        return numeroDeAlumnosQueTransfieran;
+    }
+    
+    public void setNumeroDeAlumnosQueTransfieran (int numeroDeAlumnosQueTranfieran) {
+              this.numeroDeAlumnosQueTransfieran = numeroDeAlumnosQueTranfieran;
     
     public static void main(String[] args) {
-        Colegio colegioUno = new Colegio("Colegio Los Morales",
-                10,
-                new Date(),
-                15,
-                false);
-        Colegio colegioDos = new Colegio("Colegio Maria Eugenia",
-                8,
-                new Date(),
-                12,
-                true);
-        
+        Colegio colegioUno = new Colegio("Colegio los morales",
+                    8,
+                    new Date(),
+                    10,
+                    true,
+                    3,
+                    30,
+                    10);
+        Colegio colegioDos = new Colegio("Colegio monserrat",
+                    12,
+                    new Date(),
+                    20,
+                    false,
+                    4,
+                    40,
+                    10);
         
         System.out.println(colegioUno.getNombre());
         System.out.println(colegioUno.getNumeroDeSalones());
         System.out.println(colegioUno.getNumeroDeProfesores());
         
         colegioUno.hacerMasSalones();
-        
+       
         System.out.println(colegioUno.getNombre());
         System.out.println(colegioUno.getNumeroDeSalones());
-        System.out.println(colegioUno.getNumeroDeProfesores()); 
-        
-        
+        System.out.println(colegioUno.getNumeroDeProfesores());  
     }
 
     
-
-   
 }
