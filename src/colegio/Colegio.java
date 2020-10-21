@@ -1,6 +1,5 @@
 package colegio;
 
-import java.io.PrintStream;
 import java.util.Date;
 
 public class Colegio {
@@ -14,12 +13,18 @@ public class Colegio {
     //private int numeroDeAlumnosEnCadaSalon;//es la cantidad de alumnos en cada salon
     //private int numeroDeAlumnosQueTransfieran;//es la cantidad de alumnos que pagan la matricula
 
+    
+    //Composición
+    private Rector propietario;
+    
+    
     //este es el constructor de clases
     public Colegio(String nombre,
             int numeroDeProfesores,
             Date fechaDeFundacion,
             int numeroDeSalones,
-            Boolean nacional
+            Boolean nacional,
+            String nombreRector
     //int numeroDeProfesoresNuevo,
     //int numeroDeAlumnosEnCadaSalon,
     //int numeroDeAlumnosQueTransfieran
@@ -32,6 +37,8 @@ public class Colegio {
         //this.numeroDeProfesoresNuevo = numeroDeProfesoresNuevo;
         //this.numeroDeAlumnosEnCadaSalon = numeroDeAlumnosEnCadaSalon;
         //this.numeroDeAlumnosQueTransfieran = numeroDeAlumnosQueTransfieran;
+        
+        this.propietario = new Rector(nombreRector, true);
     }
 
     //aumenta la cantidad de salones en 20 y aumenta el numero de profesores en 15
@@ -100,14 +107,17 @@ public class Colegio {
                 8,
                 new Date(),
                 10,
-                true
+                true,
+                "Juan"
         );
         Colegio colegioDos = new Colegio(
                 "Colegio monserrat",
                 12,
                 new Date(),
                 20,
-                false);
+                false,
+                "Pedro"
+        );
 
         System.out.println(colegioUno.getNombre());
         System.out.println(colegioUno.getNumeroDeSalones());

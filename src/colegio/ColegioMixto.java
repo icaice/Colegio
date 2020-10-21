@@ -1,4 +1,4 @@
-package Colegio;
+package colegio;
 
 import java.util.Date;
 
@@ -23,6 +23,7 @@ public class ColegioMixto extends Colegio {
             Date fechaDeFundacion,
             int numeroDeSalones,
             Boolean nacional,
+            String nombreRector,
             int numeroDeProfesoresNuevos,
             int numeroDeAlumnosEnCadaSalon,
             int numeroDeAlumnosQueTrasfieren) {
@@ -30,7 +31,7 @@ public class ColegioMixto extends Colegio {
                 numeroDeProfesores,
                 fechaDeFundacion,
                 numeroDeSalones,
-                nacional);
+                nacional,nombreRector);
         this.numeroDeProfesoresNuevos = numeroDeProfesoresNuevos;
         this.numeroDeAlumnosEnCadaSalon = numeroDeAlumnosEnCadaSalon;
         this.numeroDeAlumnosQuetrasfieren = numeroDeAlumnosQueTrasfieren;
@@ -80,6 +81,7 @@ public class ColegioMixto extends Colegio {
                 new Date(),
                 10,
                 false,
+                "Julian",
                 3,
                 25,
                 15);
