@@ -9,13 +9,11 @@ public class Colegio {
     private Date fechaDeFundacion; //fecha en la que se fundo el colegio
     private int numeroDeSalones;//numero de salones que hay en el colegio
     private Boolean nacional; //si es conocidad en colombia     
-    //private int numeroDeProfesoresNuevo;//es la cantidad de profesores nuevos en el colegio 
-    //private int numeroDeAlumnosEnCadaSalon;//es la cantidad de alumnos en cada salon
-    //private int numeroDeAlumnosQueTransfieran;//es la cantidad de alumnos que pagan la matricula
-
     
+
+   
     //Composición
-    private Rector propietario;
+    private Rector propietario = null;
     
     
     //este es el constructor de clases
@@ -25,22 +23,29 @@ public class Colegio {
             int numeroDeSalones,
             Boolean nacional,
             String nombreRector
-    //int numeroDeProfesoresNuevo,
-    //int numeroDeAlumnosEnCadaSalon,
-    //int numeroDeAlumnosQueTransfieran
+    
     ) {
         this.nombre = nombre;
         this.numeroDeProfesores = numeroDeProfesores;
         this.fechaDeFundacion = fechaDeFundacion;
         this.numeroDeSalones = numeroDeSalones;
         this.nacional = nacional;
-        //this.numeroDeProfesoresNuevo = numeroDeProfesoresNuevo;
-        //this.numeroDeAlumnosEnCadaSalon = numeroDeAlumnosEnCadaSalon;
-        //this.numeroDeAlumnosQueTransfieran = numeroDeAlumnosQueTransfieran;
-        
         this.propietario = new Rector(nombreRector, true);
     }
 
+    //nuevos atributos get y set
+    
+    public Rector getPropietario(){
+        return this.propietario;
+    }
+
+    public void setPropietario(Rector r){
+        this.propietario = r;
+    }
+    
+    
+    
+    
     //aumenta la cantidad de salones en 20 y aumenta el numero de profesores en 15
     public void hacerMasSalones() {
         this.numeroDeSalones += 9;
@@ -108,26 +113,26 @@ public class Colegio {
                 new Date(),
                 10,
                 true,
-                "Juan"
-        );
+                "javier");
         Colegio colegioDos = new Colegio(
                 "Colegio monserrat",
                 12,
                 new Date(),
                 20,
                 false,
-                "Pedro"
-        );
-
-        System.out.println(colegioUno.getNombre());
-        System.out.println(colegioUno.getNumeroDeSalones());
-        System.out.println(colegioUno.getNumeroDeProfesores());
-
-        colegioUno.hacerMasSalones();
-
-        System.out.println(colegioUno.getNombre());
-        System.out.println(colegioUno.getNumeroDeSalones());
-        System.out.println(colegioUno.getNumeroDeProfesores());
+                "eduardo");
+        
+        Estudiante estudianteUno = new Estudiante(
+                "oscar",
+                true,
+                "caicedo",
+                false);
+ 
+       colegioUno.setPropietario(estudianteUno);
+        
+        System.out.println("Nombre del propietario");
+        System.out.println(colegioUno.getPropietario().getNombre());
+           
     }
 
 }

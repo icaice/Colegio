@@ -31,7 +31,8 @@ public class ColegioMixto extends Colegio {
                 numeroDeProfesores,
                 fechaDeFundacion,
                 numeroDeSalones,
-                nacional,nombreRector);
+                nacional,
+                nombreRector);
         this.numeroDeProfesoresNuevos = numeroDeProfesoresNuevos;
         this.numeroDeAlumnosEnCadaSalon = numeroDeAlumnosEnCadaSalon;
         this.numeroDeAlumnosQuetrasfieren = numeroDeAlumnosQueTrasfieren;
@@ -39,8 +40,8 @@ public class ColegioMixto extends Colegio {
 
     //con este metodo sabremos la cantidad de alumnos que le hacen transferencia al colegio
     public void numeroDePago() {
-        if (this.numeroDeAlumnosEnCadaSalon >= 30) {
-            this.numeroDeAlumnosQuetrasfieren = 25;
+        if (this.numeroDeAlumnosEnCadaSalon >= 40) {
+            this.numeroDeAlumnosQuetrasfieren = 35;
         }
     }
 
@@ -49,6 +50,8 @@ public class ColegioMixto extends Colegio {
         this.numeroDeProfesoresNuevos += 2;
         this.numeroDeAlumnosEnCadaSalon += 10;
     }
+    
+// a apartir de esta linea se encuentran los metodos get y set 
 
     public int getNumeroDeProfesoresNuevos() {
         return numeroDeProfesoresNuevos;
@@ -73,6 +76,8 @@ public class ColegioMixto extends Colegio {
     public void setNumeroDeAlumnosQuetrasfieren(int numeroDeAlumnosQuetrasfieren) {
         this.numeroDeAlumnosQuetrasfieren = numeroDeAlumnosQuetrasfieren;
     }
+    
+    
 
     public static void main(String[] args) {
         ColegioMixto losMorales = new ColegioMixto(
