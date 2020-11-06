@@ -12,8 +12,9 @@ public class Colegio {
     
 
    
-    //Composición
+    //Atributos de Composición
     private Rector propietario = null;
+    private Estudiante persona;
     
     
     //este es el constructor de clases
@@ -30,8 +31,14 @@ public class Colegio {
         this.fechaDeFundacion = fechaDeFundacion;
         this.numeroDeSalones = numeroDeSalones;
         this.nacional = nacional;
-        this.propietario = new Rector(nombreRector, true);
+        this.persona = new Estudiante("carlos", true);
     }
+
+    Colegio(String string, int i, Date date, int i0, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     //nuevos atributos get y set
     
@@ -43,7 +50,14 @@ public class Colegio {
         this.propietario = r;
     }
     
-    
+    public Estudiante getPersona() {
+        return persona;
+    }
+
+    public void setEstudiante(Estudiante persona) {
+        this.persona = persona;
+    }
+
     
     
     //aumenta la cantidad de salones en 20 y aumenta el numero de profesores en 15
@@ -122,17 +136,25 @@ public class Colegio {
                 false,
                 "eduardo");
         
-        Estudiante estudianteUno = new Estudiante(
-                "oscar",
-                true,
-                "caicedo",
-                false);
+        Rector dueno = new Rector(
+               "Carlos",
+               true);
  
-       colegioUno.setPropietario(estudianteUno);
+       colegioUno.setPropietario(dueno);
         
         System.out.println("Nombre del propietario");
         System.out.println(colegioUno.getPropietario().getNombre());
            
     }
+
+    void setnumeroDeProfesores(Integer integer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Object getNombreDelColegio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
 }

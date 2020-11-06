@@ -1,22 +1,17 @@
 package colegio;
 
 
-public class Estudiante extends Rector{
+ class Estudiante {
     private String apellido;
-   
     private boolean estaEnBachillerato;
     
-    public Estudiante (String nombre, 
-             String bilingue, 
-             String apellido, 
-            
-             boolean estaEnBachillerato){
+    public Estudiante (String apellido, boolean estaEnBachillerato){
         
-        super( nombre, bilingue);
         this.apellido = apellido;
-        
         this.estaEnBachillerato = estaEnBachillerato;
     }
+
+    
 
     public String getApellido() {
         return apellido;
