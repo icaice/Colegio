@@ -214,13 +214,13 @@ public class Inventario extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Colegio portadora = new Colegio ("",0,new Date(),0,false);
+        Colegio portadora = new Colegio ("",0,new Date(),0,false,"");
         
         portadora.setNombre(campoNombreDelColegio.getText());
         campoNombreDelColegio.setText("");
         
-        portadora.setNumeroDeProfesores((Integer)campoProfesores.getValue());
-        campoProfesores.setValue(0);
+        portadora.setNumeroDeProfesores(campoProfesores.getSelectedItem());
+        campoProfesores.setSelectedItem(0);
         
         portadora.setNumeroDeSalones((Integer)campoSalones.getValue());
         campoSalones.setValue(0);

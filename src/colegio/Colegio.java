@@ -34,9 +34,7 @@ public class Colegio {
         this.persona = new Estudiante("carlos", true);
     }
 
-    Colegio(String string, int i, Date date, int i0, boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 
